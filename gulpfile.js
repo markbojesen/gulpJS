@@ -10,6 +10,7 @@ const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
 const concat = require ('gulp-concat');
+var browserSync = require('browser-sync').create();
 
 // Copy HTML files from SRC to DIST 
 gulp.task('copyHtml', function() {
@@ -43,5 +44,25 @@ gulp.task('watch', function() {
 
 });
 
+// Static Server + watching scss/html files
+// gulp.task('serve', ['sass'], function() {
+
+//     browserSync.init({
+//         server: "./dist"
+//     });
+
+//     gulp.watch("src/sass/*.scss", ['sass']);
+//     gulp.watch("src/*.html").on('change', browserSync.reload);
+// });
+
+gulp.task('serve', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./src"
+        }
+    });
+});
+
+
 // Default tasks
-gulp.task('default', ['copyHtml', 'imageMin', 'sass', 'concat']);
+gulp.task('default', ['copyHtml', 'imageMin', 'sass', 'concat', 'serve']);
