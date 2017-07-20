@@ -4,7 +4,7 @@
    ========================================================
 */ 
 
-// Requirements
+// Require
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
@@ -36,3 +36,6 @@ gulp.task('sass', function() {
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('dist/css'));
 });
+
+// Default tasks
+gulp.task('default', ['copyHtml', 'imageMin', 'minify', 'sass'])
