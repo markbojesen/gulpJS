@@ -9,6 +9,7 @@ const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
+const concat = require ('gulp-concat');
 
 // Copy HTML files from SRC to DIST 
 gulp.task('copyHtml', function() {
@@ -17,18 +18,19 @@ gulp.task('copyHtml', function() {
 });
 
 // Optimize images
-gulp.task('imageMin', () => {
+gulp.task('imageMin', function() {
     gulp.src('src/images/*')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/images'));
 });
 
-// Minify JS
-gulp.task('minify', function(){
+// Concatenate JS files
+gulp.task('concat', function() {
     gulp.src('src/js/*.js')
+    .pipe(concat('main.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('dist/js'))
-}); 
+    .pipe(gulp.dest('dist/js'));
+});
 
 // Compile Sass
 gulp.task('sass', function() {
@@ -37,5 +39,9 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('watch', function() {
+
+});
+
 // Default tasks
-gulp.task('default', ['copyHtml', 'imageMin', 'minify', 'sass'])
+gulp.task('default', ['copyHtml', 'imageMin', 'sass', 'concat']);
