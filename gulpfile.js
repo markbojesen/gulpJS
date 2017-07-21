@@ -60,11 +60,8 @@ gulp.task('sass', function() {
 
 /*  
     ========================================================
-    I have purposely left out the below gulp tasks to speed up
-    the reload time of browser-sync. Simply copy/paste below tasks into
-    the array when required for production, or run them individually with gulp 'task'
-    Dist folder will then be created automatically
-    Tasks: 'copyHtml', 'imageMin', 'concat',
+    Run the 'gulp' command and the dist folder will be created automatically.
+    Feel free to change/modify anything to your own liking. 
     ========================================================
 */
 
