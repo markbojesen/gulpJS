@@ -6,11 +6,11 @@
 
 // Require
 const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
-const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
+const uglify = require('gulp-uglify');
 const concat = require ('gulp-concat');
-var browserSync = require('browser-sync').create();
+const imagemin = require('gulp-imagemin');
+const browserSync = require('browser-sync').create();
 
 // Copy HTML files from SRC to DIST 
 gulp.task('copyHtml', function() {
@@ -25,7 +25,7 @@ gulp.task('imageMin', function() {
     .pipe(gulp.dest('dist/images'));
 });
 
-// Concatenate JS files
+// Concatenate and Uglify JavaScript files
 gulp.task('concat', function() {
     gulp.src('src/js/*.js')
     .pipe(concat('main.js'))
@@ -40,17 +40,11 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('watch', function() {
-
-});
-
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
-
     browserSync.init({
         server: "./"
     });
-
     gulp.watch("src/sass/*.scss", ['sass']);
     gulp.watch("./*.html").on('change', browserSync.reload);
 });
@@ -64,6 +58,15 @@ gulp.task('sass', function() {
 });
 
 
-// Tasks. C/P into default tasks as desired
+/*  
+    ========================================================
+    I have purposely left out the below gulp tasks to speed up
+    the reload time of browser-sync. Simply copy/paste below tasks into
+    the array when required for production.
+    Dist folder will then be created automatically
+    Tasks: 'copyHtml', 'imageMin', 'concat',
+    ========================================================
+*/
+
 // Default tasks
 gulp.task('default', ['sass', 'serve']);
