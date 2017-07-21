@@ -1,7 +1,7 @@
 {
   "name": "gulpjs",
   "version": "1.0.0",
-  "description": "Main gulpJS file",
+  "description": "My main gulpJS file for various front-end projects.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
