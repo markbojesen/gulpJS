@@ -15,29 +15,29 @@ const browserSync = require('browser-sync').create();
 // Copy HTML files from SRC to dist folder 
 gulp.task('copyHtml', function() {
     gulp.src('./*.html')
-    .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'));
 });
 
 // Optimize images
 gulp.task('imageMin', function() {
     gulp.src('src/images/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/images'));
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images'));
 });
 
 // Concatenate and Uglify JavaScript files to dist folder
 gulp.task('concat', function() {
     gulp.src('src/js/*.js')
-    .pipe(concat('main.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/js'));
+        .pipe(concat('main.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'));
 });
 
 // Compile Sass to dist folder
 gulp.task('sass', function() {
     gulp.src('src/sass/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dist/css'));
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('dist/css'));
 });
 
 // Static Server + watching scss/html files
