@@ -8,7 +8,7 @@
 
 3. ```cd``` into the project directory via your terminal
 
-4. Run ```npm start``` in your terminal and it should automatically download the required dependencies included in the package.json file.
+4. Run ```npm install``` in your terminal and it should automatically download the required dependencies included in the package.json file.
 
 5. When installed,  in your project folder run ```gulp```. Gulp tasks should execute and a live development server should appear in your browser automatically(make sure you have an uptodate version of [chrome](https://www.google.com/chrome/index.html)).
 
