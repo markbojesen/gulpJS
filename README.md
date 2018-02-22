@@ -2,7 +2,10 @@
 
 ### How to get started?
 
-1. Make sure you have [node](https://nodejs.org/en/), [npm](https://www.npmjs.com/) and [Sass](http://sass-lang.com/) installed.
+1. Make sure you have [node](https://nodejs.org/en/), [npm](https://www.npmjs.com/), [Sass](http://sass-lang.com/) and [Gulp](https://gulpjs.com/) installed.
+
+    - ```npm install sass```
+    - ```npm install gulp-cli -g```
 
 2. Clone or download this repo.
 
