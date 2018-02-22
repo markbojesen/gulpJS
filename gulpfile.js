@@ -62,8 +62,12 @@ gulp.task('sass', function() {
     ========================================================
     Run the 'gulp' command and the dist folder will be created automatically.
     Feel free to change/modify anything to your own liking. 
+
+    Current tasks being run: CopyHtml, imageMin, concatenation, compile sass, uglify js and browser-sync
     ========================================================
 */
+ 
+
 
 // Default tasks
 gulp.task('default', ['sass', 'serve', 'copyHtml', 'imageMin', 'concat']);
