@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: monospace, sans-serif;
+    background-color: #333333; 
+    color: #D3D3D3;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.main-image {
+    margin-top: 20%;
+    margin-left: 43%;
+    margin-bottom: -5em;
+    max-width: 12rem;
+    max-height: 12rem;
+    border-radius: 50%;
+}
+
+.main-title {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 3.2rem;
+
+}
+
+.underline {
+    margin-top: .3rem;
+    background-color: rgb(74, 250, 39);
+    width: 12em;
+    height: 0.1rem;
+    margin: 0 auto;
+}
+
